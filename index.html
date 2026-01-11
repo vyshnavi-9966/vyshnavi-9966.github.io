@@ -1,113 +1,84 @@
-:root {
-  --bg: #0a0e1a;
-  --bg-elev: #111827;
-  --text: #f9fafb;
-  --text-dim: #9ca3af;
-  --card: rgba(31, 41, 55, 0.95);
-  --border: rgba(75, 85, 99, 0.3);
-  --shadow: 0 20px 60px rgba(0,0,0,0.4);
-  --accent: #60a5fa;
-  --radius: 12px;
-  --cert: #10b981;
-  --proj: #f59e0b;
-  --acad: #3b82f6;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VYSHNAVI VEERAVALLI – Academic Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand-title">VYSHNAVI VEERAVALLI</div>
+        <div class="brand-subtitle">M.Sc. Process Safety & Environmental Engineering · Germany</div>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="portfolio.html">Academic Portfolio</a>
+      </nav>
+    </div>
+  </header>
 
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: var(--text);
-  background: linear-gradient(135deg, var(--bg) 0%, #1e293b 100%);
-  overflow-x: hidden;
-}
+  <main class="container">
+    <section class="hero">
+      <h1>Academic Portfolio</h1>
+      <p>
+        A structured, recruiter-friendly view of certificates, project reports, and selected academic documents.
+        Documents are shared for recruitment and academic review purposes only.
+      </p>
 
-.container { width: min(1200px, 95%); margin: 0 auto; }
+      <div class="cta-row">
+        <a class="button button-primary" href="portfolio.html">Open Portfolio</a>
+        <a class="button button-secondary" href="#contact">Contact</a>
+      </div>
 
-/* Subtle background elements */
-.bg-blob {
-  position: fixed; width: 400px; height: 400px; border-radius: 50%;
-  filter: blur(80px); opacity: 0.1; z-index: -1; animation: float 15s ease-in-out infinite;
-}
-.blob1 { top: 10%; left: -10%; background: var(--accent); }
-.blob2 { top: 20%; right: -10%; background: var(--cert); animation-delay: -5s; }
-.blob3 { bottom: 10%; left: 20%; background: var(--proj); animation-delay: -10s; }
-@keyframes float { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.05) translateY(-20px); } }
+      <div class="notice">
+        <strong>Note:</strong> View-only. No method fully prevents copying (screenshots are always possible).
+      </div>
+    </section>
 
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 100; background: rgba(17, 24, 39, 0.95); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.site-header .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
-.brand-title { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; }
-.brand-subtitle { color: var(--text-dim); font-size: 0.875rem; margin-top: 0.25rem; }
+    <section class="grid">
+      <div class="card">
+        <h2>What you’ll find</h2>
+        <ul>
+          <li>Certificates (training, tools, safety, standards)</li>
+          <li>Project reports (selected academic work)</li>
+          <li>Academic documents (transcripts – share selectively)</li>
+        </ul>
+      </div>
 
-.nav { display: flex; gap: 1rem; }
-.nav-link {
-  padding: 0.5rem 1rem; border-radius: 50px; color: var(--text-dim); border: 1px solid var(--border);
-  font-weight: 500; transition: all 0.2s ease;
-}
-.nav-link:hover { color: var(--text); border-color: var(--accent); background: rgba(96, 165, 250, 0.1); }
+      <div class="card">
+        <h2>How to review quickly</h2>
+        <ul>
+          <li>Use the search bar on the portfolio page.</li>
+          <li>Filter by Certificates / Projects / Academic.</li>
+          <li>Open PDFs in the in-page viewer.</li>
+        </ul>
+      </div>
+    </section>
 
-/* Hero */
-.hero { padding: 3rem 0 2rem; text-align: center; }
-h1 { font-size: 2.5rem; font-weight: 800; margin: 0 0 1rem; letter-spacing: -0.03em; }
-.muted { color: var(--text-dim); font-size: 1.1rem; line-height: 1.6; }
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Otto von Guericke University Magdeburg</p>
+      <div class="contact">
+        <div><strong>Email:</strong> vyshnaviveeravalli2@gmail.com</div>
+        <div><strong>LinkedIn:</strong> linkedin.com/in/vyshnavi-veeravalli/</div>
+        <div><strong>Location:</strong> Germany</div>
+        <div><strong>Focus:</strong> Process Safety · HSE · Explosion Protection</div>
+      </div>
+    </section>
+  </main>
 
-.cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0; }
-.button { padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-.button { background: var(--bg-elev); border: 1px solid var(--border); color: var(--text); }
-.button:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-.button-secondary { background: transparent; }
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Vyshnavi Veeravalli · View-only portfolio
+    </div>
+  </footer>
 
-.notice { background: rgba(31, 41, 55, 0.5); padding: 1rem; border-radius: var(--radius); border: 1px solid var(--border); }
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
-/* Grid & Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-.card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem;
-  box-shadow: var(--shadow); margin: 2rem 0;
-}
-.section-bar {
-  height: 4px; border-radius: 2px; margin-bottom: 1rem;
-  background: linear-gradient(90deg, var(--accent), #93c5fd);
-}
-.section-bar.cert { background: linear-gradient(90deg, #059669, var(--cert)); }
-.section-bar.proj { background: linear-gradient(90deg, #d97706, var(--proj)); }
-.section-bar.acad { background: linear-gradient(90deg, #2563eb, var(--acad)); }
-
-.section-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem 0; }
-.contact { display: flex; flex-direction: column; gap: 0.75rem; }
-
-/* Doc cards */
-.doc-card {
-  border: 1px solid var(--border); background: rgba(17, 24, 39, 0.8); border-radius: var(--radius);
-  padding: 1.5rem; display: flex; flex-direction: column; transition: all 0.2s;
-}
-.doc-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow); }
-.doc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--accent), #93c5fd);
-}
-.doc-card[data-type="cert"]::before { background: linear-gradient(90deg, var(--cert), #34d399); }
-.doc-card[data-type="proj"]::before { background: linear-gradient(90deg, var(--proj), #fbbf24); }
-.doc-card[data-type="acad"]::before { background: linear-gradient(90deg, var(--acad), #60a5fa); }
-.doc-title { font-weight: 700; margin: 0 0 0.5rem 0; }
-.doc-meta { color: var(--text-dim); font-size: 0.875rem; }
-
-.btn { padding: 0.5rem 1.25rem; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; }
-.btn-primary { background: var(--accent); color: #0c1a28; box-shadow: 0 10px 30px rgba(96,165,250,0.4); }
-.btn-primary:hover { background: #3b82f6; transform: translateY(-1px); }
-
-/* Modal */
-.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.8); z-index: 200; }
-.modal.open { display: flex; }
-.modal-panel { width: 90vw; height: 80vh; background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.modal-bar { display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid var(--border); }
-.modal-iframe { width: 100%; height: 100%; border: none; }
-
-.footer { text-align: center; padding: 2rem 0; color: var(--text-dim); border-top: 1px solid var(--border); }
-
-/* Responsive */
-@media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 1rem; } h1 { font-size: 2rem; } }
